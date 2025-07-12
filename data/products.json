@@ -1,97 +1,28 @@
 {
   "products": [
-    // 👗 Women's Dresses
     {
-      "name": "Emerald Green Dress",
-      "price": "$85",
-      "sizes": ["S", "M", "L", "XL"],
-      "description": "Elegant emerald-toned dress with soft fabric and a flattering silhouette.",
+      "name": "Emerald Dress",
       "category": "Dresses",
+      "price": "₾150",
+      "description": "ზურმუხტისფერ კაბა ოქროს დეტალებით",
+      "sizes": ["S", "M", "L"],
       "image": "images/emerald-dress.jpg"
     },
     {
-      "name": "Classic White Dress",
-      "price": "$69",
-      "sizes": ["XS", "S", "M", "L"],
-      "description": "Pure white summer dress with lace details and adjustable straps.",
-      "category": "Dresses",
-      "image": "images/white-dress.jpg"
-    },
-    {
-      "name": "Black Floral Dress",
-      "price": "$77",
-      "sizes": ["S", "M", "L"],
-      "description": "Black midi dress with colorful floral print and pleated bottom.",
-      "category": "Dresses",
-      "image": "images/floral-dress.jpg"
-    },
-    {
-      "name": "Royal Blue Evening Dress",
-      "price": "$92",
-      "sizes": ["M", "L", "XL"],
-      "description": "Royal blue long evening dress with open back and satin shine.",
-      "category": "Dresses",
-      "image": "images/blue-dress.jpg"
-    },
-    {
-      "name": "Soft Pink Dress",
-      "price": "$74",
-      "sizes": ["S", "M", "L"],
-      "description": "Romantic light pink dress with off-shoulder design and tulle overlay.",
-      "category": "Dresses",
-      "image": "images/pink-dress.jpg"
-    },
-
-    // 🧣 Women's Sweaters
-    {
-      "name": "White Sweater with Red Bows",
-      "price": "$56",
-      "sizes": ["S", "M", "L", "XL"],
-      "description": "Cozy white sweater decorated with cute red bows across the sleeves.",
+      "name": "Pink Sweater",
       "category": "Sweaters",
-      "image": "images/white-bow-sweater.jpg"
-    },
-    {
-      "name": "Blush Pink Sweater",
-      "price": "$52",
+      "price": "₾90",
+      "description": "თბილი ვარდისფერი სვიტერი ნაქარგით",
       "sizes": ["XS", "S", "M"],
-      "description": "Warm blush-toned sweater in soft knit fabric with round neckline.",
-      "category": "Sweaters",
       "image": "images/pink-sweater.jpg"
     },
     {
-      "name": "Fresh Green Sweater",
-      "price": "$58",
-      "sizes": ["S", "M", "L"],
-      "description": "Bright green pullover sweater perfect for spring layering.",
-      "category": "Sweaters",
-      "image": "images/green-sweater.jpg"
-    },
-
-    // 👚 Tops & Shorts Sets
-    {
-      "name": "Elegant Green Two-Piece Set",
-      "price": "$68",
-      "sizes": ["S", "M", "L"],
-      "description": "Stunning green top and skirt combo with fitted waist and floral trim.",
+      "name": "Floral Set",
       "category": "Tops & Shorts",
-      "image": "images/green-set.jpg"
-    },
-    {
-      "name": "Classic White Top & Shorts",
-      "price": "$60",
-      "sizes": ["XS", "S", "M", "L"],
-      "description": "White sleeveless top paired with matching soft cotton shorts.",
-      "category": "Tops & Shorts",
-      "image": "images/white-set.jpg"
-    },
-    {
-      "name": "White Top + Denim Shorts",
-      "price": "$63",
-      "sizes": ["S", "M", "L"],
-      "description": "Casual-chic white top with stylish ripped denim shorts — ideal for weekends.",
-      "category": "Tops & Shorts",
-      "image": "images/white-denim-set.jpg"
+      "price": "₾120",
+      "description": "ფერადი ტოპი და შორტები ზაფხულისთვის",
+      "sizes": ["M", "L"],
+      "image": "images/floral-set.jpg"
     }
   ]
 }
