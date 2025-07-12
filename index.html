@@ -1,51 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ka">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tamuna Glam Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
-    <img src="images/logo.png" alt="Tamuna Glam Logo" class="logo" />
-    <h1>Tamuna Glam ✨</h1>
+    <h1>Tamuna Glam</h1>
     <nav>
-      <a href="#dresses">Dresses</a>
-      <a href="#sweaters">Sweaters</a>
-      <a href="#sets">Tops & Shorts</a>
-      <a href="#contact">Contact</a>
+      <button onclick="scrollToSection('dresses-container')">კაბები</button>
+      <button onclick="scrollToSection('sweaters-container')">სვიტერები</button>
+      <button onclick="scrollToSection('sets-container')">ტოპები და შორტები</button>
     </nav>
   </header>
 
-  <section id="hero">
-    <h2>Glam Starts Here</h2>
-    <p>Elegant fashion curated by Tamuna herself.</p>
-    <button onclick="scrollToSection('dresses')">Shop Now</button>
-  </section>
-
-  <section id="dresses">
-    <h2>👗 Women's Dresses</h2>
-    <div class="product-container" id="dresses-container"></div>
-  </section>
-
-  <section id="sweaters">
-    <h2>🧣 Women's Sweaters</h2>
-    <div class="product-container" id="sweaters-container"></div>
-  </section>
-
-  <section id="sets">
-    <h2>👚 Tops & Shorts Sets</h2>
-    <div class="product-container" id="sets-container"></div>
-  </section>
-
-  <section id="contact">
-    <h2>📬 Contact Us</h2>
-    <p>Email: tamuna@glamstore.com</p>
-  </section>
+  <main>
+    <section id="dresses-container"><h2>კაბები</h2></section>
+    <section id="sweaters-container"><h2>სვიტერები</h2></section>
+    <section id="sets-container"><h2>ტოპები და შორტები</h2></section>
+  </main>
 
   <footer>
-    © 2025 Tamuna Glam Store. All rights reserved.
+    <p>&copy; 2025 Tamuna Glam Store</p>
   </footer>
 
   <script src="script.js"></script>
