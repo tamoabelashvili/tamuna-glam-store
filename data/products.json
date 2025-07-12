@@ -3,26 +3,26 @@
     {
       "name": "Emerald Dress",
       "category": "Dresses",
-      "price": "₾150",
-      "description": "ზურმუხტისფერ კაბა ოქროს დეტალებით",
+      "price": "$45",
+      "description": "Elegant emerald green dress with gold accents.",
       "sizes": ["S", "M", "L"],
       "image": "images/emerald-dress.jpg"
     },
     {
       "name": "Pink Sweater",
       "category": "Sweaters",
-      "price": "₾90",
-      "description": "თბილი ვარდისფერი სვიტერი ნაქარგით",
+      "price": "$30",
+      "description": "Cozy pink sweater with floral embroidery.",
       "sizes": ["XS", "S", "M"],
       "image": "images/pink-sweater.jpg"
     },
     {
       "name": "Floral Set",
       "category": "Tops & Shorts",
-      "price": "₾120",
-      "description": "ფერადი ტოპი და შორტები ზაფხულისთვის",
+      "price": "$40",
+      "description": "Two-piece summer floral set perfect for beach days.",
       "sizes": ["M", "L"],
       "image": "images/floral-set.jpg"
     }
   ]
-}
+}	
