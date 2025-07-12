@@ -1,28 +1,79 @@
-{
-  "products": [
-    {
-      "name": "Emerald Dress",
-      "category": "Dresses",
-      "price": "$45",
-      "description": "Elegant emerald green dress with gold accents.",
-      "sizes": ["S", "M", "L"],
-      "image": "images/emerald-dress.jpg"
-    },
-    {
-      "name": "Pink Sweater",
-      "category": "Sweaters",
-      "price": "$30",
-      "description": "Cozy pink sweater with floral embroidery.",
-      "sizes": ["XS", "S", "M"],
-      "image": "images/pink-sweater.jpg"
-    },
-    {
-      "name": "Floral Set",
-      "category": "Tops & Shorts",
-      "price": "$40",
-      "description": "Two-piece summer floral set perfect for beach days.",
-      "sizes": ["M", "L"],
-      "image": "images/floral-set.jpg"
-    }
-  ]
-}	
+[
+  {
+    "name": "Blue Dress",
+    "description": "Elegant blue dress perfect for evening occasions.",
+    "price": 49.99,
+    "sizes": ["S", "M", "L"],
+    "image": "blue-dress.jpg"
+  },
+  {
+    "name": "Emerald Dress",
+    "description": "Glamorous emerald green dress for special events.",
+    "price": 54.99,
+    "sizes": ["M", "L"],
+    "image": "emerald-dress.jpg"
+  },
+  {
+    "name": "Floral Dress",
+    "description": "Flowy floral-patterned dress ideal for spring.",
+    "price": 39.99,
+    "sizes": ["S", "M", "L", "XL"],
+    "image": "floral-dress.jpg"
+  },
+  {
+    "name": "Green Set",
+    "description": "Trendy two-piece green outfit, both chic and comfy.",
+    "price": 59.99,
+    "sizes": ["S", "M", "L"],
+    "image": "green-set.jpg"
+  },
+  {
+    "name": "Green Sweater",
+    "description": "Soft green sweater made from warm, breathable fabric.",
+    "price": 34.99,
+    "sizes": ["M", "L", "XL"],
+    "image": "green-sweater.jpg"
+  },
+  {
+    "name": "Pink Dress",
+    "description": "Cute pink mini dress with flattering design.",
+    "price": 44.99,
+    "sizes": ["S", "M", "L"],
+    "image": "pink-dress.jpg"
+  },
+  {
+    "name": "Pink Sweater",
+    "description": "Cozy and colorful pink sweater for everyday wear.",
+    "price": 29.99,
+    "sizes": ["S", "M", "L", "XL"],
+    "image": "pink-sweater.jpg"
+  },
+  {
+    "name": "White Bow Sweater",
+    "description": "Chic white sweater featuring a stylish bow on the back.",
+    "price": 42.50,
+    "sizes": ["M", "L"],
+    "image": "white-bow-sweater.jpg"
+  },
+  {
+    "name": "White Denim Set",
+    "description": "Stylish white denim top and bottom set for casual looks.",
+    "price": 69.00,
+    "sizes": ["S", "M", "L"],
+    "image": "white-denim-set.jpg"
+  },
+  {
+    "name": "White Dress",
+    "description": "Classic white dress with a modern cut and flow.",
+    "price": 59.90,
+    "sizes": ["S", "M", "L"],
+    "image": "white-dress.jpg"
+  },
+  {
+    "name": "White Set",
+    "description": "Minimalist two-piece white outfit with clean lines.",
+    "price": 64.00,
+    "sizes": ["S", "M", "L"],
+    "image": "white-set.jpg"
+  }
+]
