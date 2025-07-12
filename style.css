@@ -1,71 +1,58 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff8f9;
-  color: #4b004e;
+  background: #fef9f9;
 }
 
 header {
+  background-color: #8e44ad;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav button {
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
   background: #ffffff;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 2px 4px #ccc;
-}
-
-.logo {
-  width: 80px;
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #e91e63;
-  font-weight: bold;
-}
-
-#hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(to right, #f7c6da, #fbd8f2);
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  background-color: #e91e63;
-  color: #fff;
-  border-radius: 20px;
+  color: #8e44ad;
+  border: 2px solid #8e44ad;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+nav button:hover {
+  background: #8e44ad;
+  color: #fff;
 }
 
 section {
-  padding: 40px 20px;
-}
-
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  padding: 1.5rem;
 }
 
 .product {
-  background: #ffffff;
-  width: 250px;
-  margin: 15px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px #ddd;
-  text-align: center;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .product img {
-  width: 100%;
-  border-radius: 5px;
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #fde4f2;
+.product button {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
