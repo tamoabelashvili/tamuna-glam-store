@@ -2,35 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tamuna Glam Store</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
   <header>
-    <h1>Tamuna Glam</h1>
+    <h1>Tamuna Glam Store</h1>
     <nav>
-      <button onclick="scrollToSection('dresses-container')">Dresses</button>
-      <button onclick="scrollToSection('sweaters-container')">Sweaters</button>
-      <button onclick="scrollToSection('sets-container')">Tops & Shorts</button>
+      <a href="#dresses">Dresses</a>
+      <a href="#sweaters">Sweaters</a>
+      <a href="#sets">Sets</a>
+      <a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
     </nav>
   </header>
 
   <main>
-    <section id="dresses-container">
-      <h2>Dresses</h2>
-    </section>
-    <section id="sweaters-container">
-      <h2>Sweaters</h2>
-    </section>
-    <section id="sets-container">
-      <h2>Tops & Shorts</h2>
-    </section>
+    <section id="dresses"><h2>Dresses</h2><div class="product-grid" id="dresses-list"></div></section>
+    <section id="sweaters"><h2>Sweaters</h2><div class="product-grid" id="sweaters-list"></div></section>
+    <section id="sets"><h2>Sets</h2><div class="product-grid" id="sets-list"></div></section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tamuna Glam Store</p>
+    <p>&copy; 2025 Tamuna Glam Store. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
