@@ -1,40 +1,54 @@
-function scrollToSection(id) {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-}
-
-window.addEventListener("DOMContentLoaded", () => {
-  fetch("data/products.json")
-    .then((res) => {
-      if (!res.ok) throw new Error("Failed to load products");
-      return res.json();
-    })
-    .then((data) => {
-      const containers = {
-        Dresses: "dresses-container",
-        Sweaters: "sweaters-container",
-        "Tops & Shorts": "sets-container"
-      };
-
-      data.products.forEach((product) => {
-        const productCard = document.createElement("div");
-        productCard.className = "product";
-        productCard.innerHTML = `
-          <img src="${product.image}" alt="${product.name}">
-          <h3>${product.name}</h3>
-          <p><strong>${product.price}</strong></p>
-          <p>${product.description}</p>
-          <p>Sizes: ${product.sizes.join(", ")}</p>
-          <button>Add to Cart</button>
-        `;
-        const containerId = containers[product.category];
-        const container = document.getElementById(containerId);
-        if (container) container.appendChild(productCard);
-      });
-    })
-    .catch((err) => {
-      console.error("Error loading products:", err);
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('data/products.json')
+    .then(res => res.json())
+    .then(products => {
+      displayCategory(products, 'Dress', 'dresses-list');
+      displayCategory(products, 'Sweater', 'sweaters-list');
+      displayCategory(products, 'Set', 'sets-list');
     });
+
+  updateCartCount();
+
+  function displayCategory(products, keyword, containerId) {
+    const container = document.getElementById(containerId);
+    products.filter(p => p.category.includes(keyword)).forEach(product => {
+      const div = document.createElement('div');
+      div.className = 'product';
+      div.innerHTML = `
+        <img src="images/${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.price} ₾</p>
+        <label>Size:
+          <select>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+        </label>
+        <button>Add to Cart</button>
+      `;
+
+      div.querySelector('button').addEventListener('click', () => {
+        const size = div.querySelector('select').value;
+        const item = {
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          size: size
+        };
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(item);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+      });
+
+      container.appendChild(div);
+    });
+  }
+
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    document.getElementById('cart-count').textContent = cart.length;
+  }
 });
