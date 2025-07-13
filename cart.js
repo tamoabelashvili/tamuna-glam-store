@@ -1,29 +1,37 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartItems = document.getElementById('cart-items');
-  const totalEl = document.getElementById('cart-total');
+// 🔁 Retrieve cart data from localStorage
+const cartData = JSON.parse(localStorage.getItem("tamunaCart")) || [];
+
+const cartItemsContainer = document.getElementById("cart-items");
+const cartTotalElement = document.getElementById("cart-total");
+
+// 🧾 Render cart items
+function renderCart() {
+  cartItemsContainer.innerHTML = "";
   let total = 0;
 
-  cart.forEach((item, index) => {
-    const div = document.createElement('div');
-    div.className = 'product';
+  cartData.forEach(item => {
+    const div = document.createElement("div");
+    div.className = "product";
     div.innerHTML = `
-      <img src="images/${item.image}" alt="${item.name}">
+      <img src="${item.image}" alt="${item.name}">
       <h3>${item.name}</h3>
-      <p>Size: ${item.size}</p>
-      <p>Price: ${item.price} ₾</p>
-      <button onclick="removeItem(${index})">Remove</button>
+      <p><strong>${item.price}</strong></p>
+      <p>Size: ${item.size || "M"}</p>
+      <button onclick="removeItem('${item.name}')">Remove</button>
     `;
-    total += item.price;
-    cartItems.appendChild(div);
+    cartItemsContainer.appendChild(div);
+
+    total += parseFloat(item.price.replace("$", ""));
   });
 
-  totalEl.innerHTML = `<h3>Total: ${total} ₾</h3>`;
-});
+  cartTotalElement.textContent = `$${total.toFixed(2)}`;
+}
 
-function removeItem(index) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.splice(index, 1);
-  localStorage.setItem('cart', JSON.stringify(cart));
+// ❌ Remove product from cart
+function removeItem(productName) {
+  const updatedCart = cartData.filter(item => item.name !== productName);
+  localStorage.setItem("tamunaCart", JSON.stringify(updatedCart));
   location.reload();
 }
+
+renderCart();
