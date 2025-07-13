@@ -1,79 +1,92 @@
-[
-  {
-    "name": "Blue Dress",
-    "description": "Elegant blue dress perfect for evening occasions.",
-    "price": 49.99,
-    "sizes": ["S", "M", "L"],
-    "image": "blue-dress.jpg"
-  },
-  {
-    "name": "Emerald Dress",
-    "description": "Glamorous emerald green dress for special events.",
-    "price": 54.99,
-    "sizes": ["M", "L"],
-    "image": "emerald-dress.jpg"
-  },
-  {
-    "name": "Floral Dress",
-    "description": "Flowy floral-patterned dress ideal for spring.",
-    "price": 39.99,
-    "sizes": ["S", "M", "L", "XL"],
-    "image": "floral-dress.jpg"
-  },
-  {
-    "name": "Green Set",
-    "description": "Trendy two-piece green outfit, both chic and comfy.",
-    "price": 59.99,
-    "sizes": ["S", "M", "L"],
-    "image": "green-set.jpg"
-  },
-  {
-    "name": "Green Sweater",
-    "description": "Soft green sweater made from warm, breathable fabric.",
-    "price": 34.99,
-    "sizes": ["M", "L", "XL"],
-    "image": "green-sweater.jpg"
-  },
-  {
-    "name": "Pink Dress",
-    "description": "Cute pink mini dress with flattering design.",
-    "price": 44.99,
-    "sizes": ["S", "M", "L"],
-    "image": "pink-dress.jpg"
-  },
-  {
-    "name": "Pink Sweater",
-    "description": "Cozy and colorful pink sweater for everyday wear.",
-    "price": 29.99,
-    "sizes": ["S", "M", "L", "XL"],
-    "image": "pink-sweater.jpg"
-  },
-  {
-    "name": "White Bow Sweater",
-    "description": "Chic white sweater featuring a stylish bow on the back.",
-    "price": 42.50,
-    "sizes": ["M", "L"],
-    "image": "white-bow-sweater.jpg"
-  },
-  {
-    "name": "White Denim Set",
-    "description": "Stylish white denim top and bottom set for casual looks.",
-    "price": 69.00,
-    "sizes": ["S", "M", "L"],
-    "image": "white-denim-set.jpg"
-  },
-  {
-    "name": "White Dress",
-    "description": "Classic white dress with a modern cut and flow.",
-    "price": 59.90,
-    "sizes": ["S", "M", "L"],
-    "image": "white-dress.jpg"
-  },
-  {
-    "name": "White Set",
-    "description": "Minimalist two-piece white outfit with clean lines.",
-    "price": 64.00,
-    "sizes": ["S", "M", "L"],
-    "image": "white-set.jpg"
-  }
-]
+{
+  "products": [
+    {
+      "name": "Blue Dress",
+      "category": "Dresses",
+      "price": "$52",
+      "description": "A breezy sky-blue dress with fluttering sleeves, perfect for pastel moods and sunny escapes.",
+      "sizes": ["S", "M", "L"],
+      "image": "images/blue-dress.jpg"
+    },
+    {
+      "name": "Emerald Dress",
+      "category": "Dresses",
+      "price": "$55",
+      "description": "An elegant emerald green gown with gold-toned accents for a night full of glamour.",
+      "sizes": ["S", "M", "L", "XL"],
+      "image": "images/emerald-dress.jpg"
+    },
+    {
+      "name": "Floral Dress",
+      "category": "Dresses",
+      "price": "$48",
+      "description": "Soft pastel floral patterns layered with lightweight fabric — spring in a dress.",
+      "sizes": ["M", "L"],
+      "image": "images/floral-dress.jpg"
+    },
+    {
+      "name": "Pink Dress",
+      "category": "Dresses",
+      "price": "$58",
+      "description": "Blush satin dress with minimal straps and a dreamy flow — elegant simplicity.",
+      "sizes": ["XS", "S", "M"],
+      "image": "images/pink-dress.jpg"
+    },
+    {
+      "name": "White Dress",
+      "category": "Dresses",
+      "price": "$60",
+      "description": "Classic white midi with lace textures and soft silhouette. Timeless and clean.",
+      "sizes": ["S", "M", "L", "XL"],
+      "image": "images/white-dress.jpg"
+    },
+    {
+      "name": "Pink Sweater",
+      "category": "Sweaters",
+      "price": "$38",
+      "description": "Knitted pastel pink sweater with flower embroidery — cozy with a glam twist.",
+      "sizes": ["XS", "S", "M"],
+      "image": "images/pink-sweater.jpg"
+    },
+    {
+      "name": "Green Sweater",
+      "category": "Sweaters",
+      "price": "$40",
+      "description": "Soft green cable-knit sweater with a relaxed fit — fresh and versatile.",
+      "sizes": ["S", "M", "L"],
+      "image": "images/green-sweater.jpg"
+    },
+    {
+      "name": "White Bow Sweater",
+      "category": "Sweaters",
+      "price": "$42",
+      "description": "Cream white sweater with oversized bow detail. Elegant and chic.",
+      "sizes": ["S", "M"],
+      "image": "images/white-bow-sweater.jpg"
+    },
+    {
+      "name": "Green Set",
+      "category": "Tops & Shorts",
+      "price": "$45",
+      "description": "Mint green crop top and matching shorts — soft cotton for warm days.",
+      "sizes": ["M", "L"],
+      "image": "images/green-set.jpg"
+    },
+    {
+      "name": "White Denim Set",
+      "category": "Tops & Shorts",
+      "price": "$48",
+      "description": "Bright white denim top with shorts — clean lines and high fashion attitude.",
+      "sizes": ["S", "M", "L"],
+      "image": "images/white-denim-set.jpg"
+    },
+    {
+      "name": "White Set",
+      "category": "Tops & Shorts",
+      "price": "$50",
+      "description": "White linen crop top and shorts with gold button detail. Glam and breathable.",
+      "sizes": ["S", "M", "L", "XL"],
+      "image": "images/white-set.jpg"
+    }
+  ]
+}
