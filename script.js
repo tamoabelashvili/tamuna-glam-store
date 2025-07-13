@@ -1,54 +1,77 @@
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('data/products.json')
-    .then(res => res.json())
-    .then(products => {
-      displayCategory(products, 'Dress', 'dresses-list');
-      displayCategory(products, 'Sweater', 'sweaters-list');
-      displayCategory(products, 'Set', 'sets-list');
-    });
+// ✨ Smooth scroll to section
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
 
-  updateCartCount();
+// 🌟 Filter by category
+function filterCategory(category) {
+  const sections = document.querySelectorAll(".product-section");
 
-  function displayCategory(products, keyword, containerId) {
-    const container = document.getElementById(containerId);
-    products.filter(p => p.category.includes(keyword)).forEach(product => {
-      const div = document.createElement('div');
-      div.className = 'product';
-      div.innerHTML = `
-        <img src="images/${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>${product.price} ₾</p>
-        <label>Size:
-          <select>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
-          </select>
-        </label>
-        <button>Add to Cart</button>
-      `;
+  sections.forEach(section => {
+    if (category === "All" || section.id === getSectionId(category)) {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  });
+}
 
-      div.querySelector('button').addEventListener('click', () => {
-        const size = div.querySelector('select').value;
-        const item = {
-          name: product.name,
-          price: product.price,
-          image: product.image,
-          size: size
-        };
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.push(item);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
+// 🔍 Search functionality
+function searchProducts() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const allProducts = document.querySelectorAll(".product");
+
+  allProducts.forEach(product => {
+    const title = product.querySelector("h3").textContent.toLowerCase();
+    if (title.includes(input)) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+
+// 🔁 Helper to get section ID from category
+function getSectionId(category) {
+  const map = {
+    "Dresses": "dresses-container",
+    "Sweaters": "sweaters-container",
+    "Tops & Shorts": "sets-container"
+  };
+  return map[category];
+}
+
+// 🚀 Load products when page loads
+window.addEventListener("DOMContentLoaded", () => {
+  fetch("data/products.json")
+    .then(res => {
+      if (!res.ok) throw new Error("Failed to load products");
+      return res.json();
+    })
+    .then(data => {
+      const containers = {
+        Dresses: document.getElementById("dresses-container"),
+        Sweaters: document.getElementById("sweaters-container"),
+        "Tops & Shorts": document.getElementById("sets-container")
+      };
+
+      data.products.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.style.animation = "fadeUp 0.8s ease";
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p><strong>${product.price}</strong></p>
+          <p>${product.description}</p>
+          <p>Sizes: ${product.sizes.join(", ")}</p>
+          <button>Add to Cart</button>
+        `;
+        containers[product.category]?.appendChild(div);
       });
-
-      container.appendChild(div);
-    });
-  }
-
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    document.getElementById('cart-count').textContent = cart.length;
-  }
+    })
+    .catch(err => console.error("Error loading products:", err));
 });
