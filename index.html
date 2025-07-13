@@ -2,31 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tamuna Glam Store</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- 💖 Boutique Header -->
   <header>
-    <h1>Tamuna Glam Store</h1>
+    <h1>Tamuna Glam</h1>
+    
+    <!-- ✨ Category Navigation -->
     <nav>
-      <a href="#dresses">Dresses</a>
-      <a href="#sweaters">Sweaters</a>
-      <a href="#sets">Sets</a>
-      <a href="cart.html" class="cart-link">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <button onclick="scrollToSection('dresses-container')">Dresses</button>
+      <button onclick="scrollToSection('sweaters-container')">Sweaters</button>
+      <button onclick="scrollToSection('sets-container')">Tops & Shorts</button>
     </nav>
+
+    <!-- 🔍 Search Box -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search product name..." oninput="searchProducts()" />
+    </div>
   </header>
 
+  <!-- 🧁 Main Content with All Products -->
   <main>
-    <section id="dresses"><h2>Dresses</h2><div class="product-grid" id="dresses-list"></div></section>
-    <section id="sweaters"><h2>Sweaters</h2><div class="product-grid" id="sweaters-list"></div></section>
-    <section id="sets"><h2>Sets</h2><div class="product-grid" id="sets-list"></div></section>
+    <!-- 👗 Dresses Section -->
+    <section id="dresses-container" class="product-section">
+      <h2>Dresses</h2>
+      <!-- Products will be rendered here via script.js -->
+    </section>
+
+    <!-- 🧥 Sweaters Section -->
+    <section id="sweaters-container" class="product-section">
+      <h2>Sweaters</h2>
+    </section>
+
+    <!-- 👙 Sets Section -->
+    <section id="sets-container" class="product-section">
+      <h2>Tops & Shorts</h2>
+    </section>
   </main>
 
+  <!-- 📜 Footer -->
   <footer>
-    <p>&copy; 2025 Tamuna Glam Store. All rights reserved.</p>
+    <p>&copy; 2025 Tamuna Glam Store — All Pastel Dreams Reserved</p>
   </footer>
 
+  <!-- ⚙️ JavaScript -->
   <script src="script.js"></script>
 </body>
 </html>
