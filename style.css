@@ -1,149 +1,148 @@
-/* 🌸 Reset & Base */
+/* 🌸 Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #fdf6f9, #eef5ff);
-  color: #3b245c;
-  transition: background 0.4s ease;
-  overflow-x: hidden;
+  background-color: #fffdfc;
+  color: #3a3a3a;
+  line-height: 1.6;
 }
 
-/* ✨ Header */
+/* 💅 Header */
 header {
-  background: linear-gradient(to right, #f7c5f4, #dce6ff);
-  padding: 2rem 1rem;
+  background-color: #f9e5f7;
+  padding: 20px;
   text-align: center;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-  animation: fadeDown 0.8s ease-out;
-}
-
-header h1 {
-  font-size: 2.8rem;
-  letter-spacing: 1px;
-  color: #3b245c;
-}
-
-/* 💅 Navigation Buttons */
-nav {
-  margin-top: 1rem;
-}
-
-nav button {
-  margin: 0.4rem;
-  padding: 0.6rem 1.4rem;
-  font-size: 1rem;
-  background: #fff;
-  color: #d16dff;
-  border: 2px solid #d16dff;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-nav button:hover {
-  background: #d16dff;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-/* 🧁 Sections with Fade */
-section {
-  padding: 3rem 1.5rem;
-  animation: fadeUp 0.8s ease forwards;
-  opacity: 0;
-  animation-delay: 0.4s;
-}
-
-section h2 {
+header h1 {
   font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #6c3483;
+  color: #8c5fb2;
 }
 
-/* 🛍️ Product Cards */
+nav {
+  margin-top: 10px;
+}
+
+nav button,
+nav a {
+  margin: 5px;
+  padding: 10px 16px;
+  background-color: #e3d3f5;
+  border: none;
+  border-radius: 8px;
+  color: #5d3b91;
+  cursor: pointer;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+nav button:hover,
+nav a:hover {
+  background-color: #d2bdef;
+}
+
+/* 🔍 Search Bar */
+.search-bar {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 60%;
+  border-radius: 6px;
+  border: 1px solid #d0c5e0;
+}
+
+/* 🧁 Product Card */
 .product {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 1rem;
-  margin-bottom: 2.2rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: #fff;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #f0e1f5;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.07);
+  transition: transform 0.3s;
 }
 
 .product:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
 }
 
 .product img {
   width: 100%;
-  border-radius: 14px;
-  margin-bottom: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.product img:hover {
-  transform: scale(1.03);
+  max-width: 250px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .product h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: #3b245c;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  color: #6b418d;
 }
 
 .product p {
+  margin-bottom: 8px;
   font-size: 0.95rem;
-  margin-bottom: 0.4rem;
-  color: #5a4a70;
 }
 
-/* 💎 Add to Cart Button */
 .product button {
-  margin-top: 0.6rem;
-  padding: 0.5rem 1rem;
-  background: #d16dff;
-  color: white;
+  padding: 8px 14px;
+  background-color: #efcffa;
   border: none;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  color: #61298c;
 }
 
 .product button:hover {
-  background: #b253da;
+  background-color: #e2b8f3;
 }
 
-/* 📱 Responsive Mobile */
+/* 🎯 Section Titles */
+.product-section h2 {
+  font-size: 1.6rem;
+  margin: 30px 20px 10px;
+  color: #794fa3;
+}
+
+/* 📦 Layout */
+main {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+  padding: 15px;
+  background-color: #f4e7fa;
+  color: #6d4c87;
+  font-size: 0.9rem;
+}
+
+/* 📱 Responsive */
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2.2rem;
+  .search-bar input {
+    width: 90%;
   }
 
-  nav button {
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
-  section {
-    padding: 2rem 1rem;
+  main {
+    grid-template-columns: 1fr;
   }
-}
-
-/* 🎞️ Animations */
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeDown {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
 }
