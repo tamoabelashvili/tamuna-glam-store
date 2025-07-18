@@ -1,4 +1,4 @@
-// ✨ Smooth scroll
+// 🧁 სექციაზე გადასვლა ღილაკით
 function scrollToSection(id) {
   const section = document.getElementById(id);
   if (section) {
@@ -6,7 +6,7 @@ function scrollToSection(id) {
   }
 }
 
-// 🔍 Live search
+// 🔍 ცოცხალი ძიება
 function searchProducts() {
   const input = document.getElementById("searchInput").value.toLowerCase();
   const allProducts = document.querySelectorAll(".product");
@@ -17,37 +17,41 @@ function searchProducts() {
   });
 }
 
-// 💖 Add to Cart
+// 🛍️ კალათაში დამატება
 function addToCart(product) {
   const cart = JSON.parse(localStorage.getItem("tamunaCart")) || [];
   cart.push(product);
   localStorage.setItem("tamunaCart", JSON.stringify(cart));
-  alert(`${product.name} added to cart 💅`);
+  alert(`${product.name} დაემატა კალათაში 💖`);
 }
 
-// 🚀 Load products
+// 🚀 პროდუქტის ჩატვირთვა JSON-დან
 window.addEventListener("DOMContentLoaded", () => {
-  const products = JSON.parse(localStorage.getItem("tamunaProducts")) || [];
+  fetch("data/products.json")
+    .then(res => res.json())
+    .then(data => {
+      const containers = {
+        Dresses: document.getElementById("dresses-container"),
+        Sweaters: document.getElementById("sweaters-container"),
+        "Tops & Shorts": document.getElementById("sets-container")
+      };
 
-  const containers = {
-    Dresses: document.getElementById("dresses-container"),
-    Sweaters: document.getElementById("sweaters-container"),
-    "Tops & Shorts": document.getElementById("sets-container")
-  };
-
-  products.forEach(product => {
-    const div = document.createElement("div");
-    div.className = "product";
-
-    div.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h3><a href="product.html?id=${encodeURIComponent(product.name)}">${product.name}</a></h3>
-      <p><strong>${product.price}</strong></p>
-      <p>${product.description}</p>
-      <p>Sizes: ${product.sizes.join(", ")}</p>
-      <button onclick='addToCart(${JSON.stringify(product)}); event.stopPropagation(); return false;'>Add to Cart</button>
-    `;
-
-    containers[product.category]?.appendChild(div);
-  });
+      data.products.forEach(product => {
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3><a href="product.html?id=${encodeURIComponent(product.name)}">${product.name}</a></h3>
+          <p><strong>${product.price}</strong></p>
+          <p>${product.description}</p>
+          <p>Sizes: ${product.sizes.join(", ")}</p>
+          <button onclick='addToCart(${JSON.stringify(product)}); event.stopPropagation(); return false;'>Add to Cart</button>
+        `;
+        containers[product.category]?.appendChild(div);
+      });
+    })
+    .catch(err => {
+      console.error("პროდუქტების ჩატვირთვაში მოხდა შეცდომა:", err);
+      document.body.innerHTML = "<p style='text-align:center; padding:20px;'>პროდუქტები ვერ ჩაიტვირთა 😢</p>";
+    });
 });
