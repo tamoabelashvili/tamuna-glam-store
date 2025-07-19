@@ -1,4 +1,4 @@
-// 🧁 სექციაზე გადასვლა ღილაკით
+// 🌟 გადასვლა სექციაზე ღილაკით
 function scrollToSection(id) {
   const section = document.getElementById(id);
   if (section) {
@@ -17,15 +17,7 @@ function searchProducts() {
   });
 }
 
-// 🛍️ კალათაში დამატება
-function addToCart(product) {
-  const cart = JSON.parse(localStorage.getItem("tamunaCart")) || [];
-  cart.push(product);
-  localStorage.setItem("tamunaCart", JSON.stringify(cart));
-  alert(`${product.name} დაემატა კალათაში 💖`);
-}
-
-// 🚀 პროდუქტის ჩატვირთვა JSON-დან
+// 📦 პროდუქციის ჩატვირთვა JSON–იდან
 window.addEventListener("DOMContentLoaded", () => {
   fetch("data/products.json")
     .then(res => res.json())
@@ -55,3 +47,33 @@ window.addEventListener("DOMContentLoaded", () => {
       document.body.innerHTML = "<p style='text-align:center; padding:20px;'>პროდუქტები ვერ ჩაიტვირთა 😢</p>";
     });
 });
+
+// 🛒 პროდუქტების დამატება კალათაში
+function addToCart(product) {
+  const cart = JSON.parse(localStorage.getItem("tamunaCart")) || [];
+  cart.push(product);
+  localStorage.setItem("tamunaCart", JSON.stringify(cart));
+  alert(`${product.name} დაემატა კალათაში 💖`);
+}
+
+// 🧁 კატეგორიის ფილტრი – აჩვენებს მხოლოდ არჩეულს
+function getSectionId(category) {
+  const map = {
+    "Dresses": "dresses-container",
+    "Sweaters": "sweaters-container",
+    "Tops & Shorts": "sets-container"
+  };
+  return map[category];
+}
+
+function filterCategory(category) {
+  const sections = document.querySelectorAll(".product-section");
+
+  sections.forEach(section => {
+    if (category === "All" || section.id === getSectionId(category)) {
+      section.style.display = "block";
+    } else {
+      section.style.display = "none";
+    }
+  });
+}
