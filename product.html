@@ -1,37 +1,78 @@
-const id = new URLSearchParams(window.location.search).get("id");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Details — Tamuna Glam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 💅 Header -->
+  <header>
+    <h1>Product Details</h1>
+    <nav>
+      <a href="index.html">← Back to Shop</a>
+    </nav>
+  </header>
 
-fetch("data/products.json")
-  .then(res => res.json())
-  .then(data => {
-    const product = data.products.find(p => p.name === id);
+  <!-- 🛍️ Product Content -->
+  <main id="product-details">
+    <!-- პროდუქტი ჩაიტვირთება აქ -->
+  </main>
 
-    if (!product) {
-      document.getElementById("product-details").innerHTML = "<p>Product not found 😢</p>";
-      return;
-    }
+  <footer>
+    <p>&copy; 2025 Tamuna Glam Store</p>
+  </footer>
 
-    const div = document.createElement("div");
-    div.className = "product";
-    div.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
-      <h2>${product.name}</h2>
-      <p><strong>Price:</strong> ${product.price}</p>
-      <p><strong>Description:</strong> ${product.description}</p>
-      <p><strong>Sizes:</strong> ${product.sizes.join(", ")}</p>
-      <form id="order-form">
-        <label>Size:</label>
-        <select required>
-          ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")}
-        </select>
-        <label>Your Email:</label>
-        <input type="email" required placeholder="you@example.com" />
-        <button type="submit">Order Now</button>
-      </form>
-    `;
-    document.getElementById("product-details").appendChild(div);
+  <script>
+    // 🌸 URL–დან ID–ს წამოღება
+    const id = new URLSearchParams(window.location.search).get("id");
 
-    document.getElementById("order-form").addEventListener("submit", e => {
-      e.preventDefault();
-      alert("Order received 💖 We'll contact you soon!");
-    });
-  });
+    // 📦 ჩატვირთვა JSON–დან
+    fetch("data/products.json")
+      .then(res => res.json())
+      .then(data => {
+        const product = data.products.find(p => p.name === id);
+
+        if (!product) {
+          document.getElementById("product-details").innerHTML = "<p>Product not found 😢</p>";
+          return;
+        }
+
+        // 💖 HTML შემოქმედება
+        const div = document.createElement("div");
+        div.className = "product";
+        div.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h2>${product.name}</h2>
+          <p><strong>Price:</strong> ${product.price}</p>
+          <p><strong>Description:</strong> ${product.description}</p>
+          <p><strong>Sizes:</strong> ${product.sizes.join(", ")}</p>
+
+          <form id="order-form">
+            <label>Select size:</label>
+            <select required>
+              ${product.sizes.map(size => `<option value="${size}">${size}</option>`).join("")}
+            </select>
+
+            <label>Your email:</label>
+            <input type="email" placeholder="you@example.com" required />
+
+            <button type="submit">Order Now</button>
+          </form>
+        `;
+        document.getElementById("product-details").appendChild(div);
+
+        // ✉️ Order Form Submit
+        document.getElementById("order-form").addEventListener("submit", e => {
+          e.preventDefault();
+          alert("Order received 💖 We'll contact you soon!");
+        });
+      })
+      .catch(err => {
+        console.error("პროდუქტების ჩატვირთვა ვერ მოხერხდა:", err);
+        document.getElementById("product-details").innerHTML = "<p>Error loading product 😢</p>";
+      });
+  </script>
+</body>
+</html>
