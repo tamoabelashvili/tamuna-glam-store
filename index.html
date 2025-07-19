@@ -10,10 +10,15 @@
   <!-- 💅 Header -->
   <header>
     <h1>Tamuna Glam</h1>
+
     <nav>
-      <button onclick="scrollToSection('dresses-container')">Dresses</button>
-      <button onclick="scrollToSection('sweaters-container')">Sweaters</button>
-      <button onclick="scrollToSection('sets-container')">Tops & Shorts</button>
+      <button onclick="scrollToSection('dresses-container')">↓ Dresses</button>
+      <button onclick="scrollToSection('sweaters-container')">↓ Sweaters</button>
+      <button onclick="scrollToSection('sets-container')">↓ Tops & Shorts</button>
+      <button onclick="filterCategory('Dresses')">Dresses</button>
+      <button onclick="filterCategory('Sweaters')">Sweaters</button>
+      <button onclick="filterCategory('Tops & Shorts')">Tops & Shorts</button>
+      <button onclick="filterCategory('All')">Show All</button>
       <a href="cart.html">🛒 View Cart</a>
     </nav>
 
@@ -22,7 +27,7 @@
     </div>
   </header>
 
-  <!-- 🧁 Main Content -->
+  <!-- 🧁 Product Sections -->
   <main>
     <section id="dresses-container" class="product-section">
       <h2>Dresses</h2>
@@ -38,7 +43,6 @@
     </section>
   </main>
 
-  <!-- 💫 Footer -->
   <footer>
     <p>&copy; 2025 Tamuna Glam Store — Pastel Dreams & Sass</p>
   </footer>
