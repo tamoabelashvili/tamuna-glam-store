@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Panel — Tamuna Glam</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Admin Panel</h1>
+    <nav>
+      <a href="index.html">← Back to Shop</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Registered Users</h2>
+    <table id="user-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- მომხმარებლები გამოჩნდება აქ -->
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tamuna Glam Store</p>
+  </footer>
+
+  <script>
+    const users = JSON.parse(localStorage.getItem("tamunaUsers")) || [];
+
+    const tableBody = document.querySelector("#user-table tbody");
+
+    function renderUsers() {
+      tableBody.innerHTML = "";
+
+      users.forEach((user, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td><button onclick="deleteUser(${index})">❌ Delete</button></td>
+        `;
+        tableBody.appendChild(row);
+      });
+
+      if (users.length === 0) {
+        tableBody.innerHTML = `<tr><td colspan="3">No users registered 😢</td></tr>`;
+      }
+    }
+
+    function deleteUser(index) {
+      if (confirm("Are you sure you want to remove this user?")) {
+        users.splice(index, 1);
+        localStorage.setItem("tamunaUsers", JSON.stringify(users));
+        renderUsers();
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", renderUsers);
+  </script>
+</body>
+</html>
